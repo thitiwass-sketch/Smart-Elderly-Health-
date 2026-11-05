@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Plus Jakarta Sans', 'IBM Plex Sans Thai', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #f8fafc;
+    background-color: #0b1120;
+    line-height: 1.55;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+.font-mono-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chevron Header Shape inspired by 4-Tier Matrix Theme Design */
+.chevron-header-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+}
+
+.diagonal-title-banner {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 76%);
+}
+
+/* Adaptive UI: Elderly Large Typography Accessibility Mode */
+html:has(.ux-scale-large) {
+  font-size: 112.5%;
+}
+
+.ux-scale-large {
+  font-size: 108%;
+  line-height: 1.65;
+}
+
+/* Clinical Night Slate (Dark) — Harmonious High-Contrast Theme */
+.ux-theme-dark {
+  background-color: #0b1120;
+  color: #f8fafc;
+}
+
+/* Explicit Menu Bar & Active State Visibility Guarantees */
+.app-menu-bar {
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 #0f172a;
+}
+
+.app-menu-btn-active {
+  background: linear-gradient(135deg, #14b8a6 0%, #34d399 100%) !important;
+  color: #020617 !important;
+  border-color: #99f6e4 !important;
+  font-weight: 800 !important;
+}
+
+.app-menu-btn-active span,
+.app-menu-btn-active svg {
+  color: #020617 !important;
+}
+
+.app-menu-btn-inactive {
+  background-color: rgba(30, 41, 59, 0.92);
+  color: #f1f5f9;
+  border-color: #334155;
+}
+
+.app-menu-btn-inactive:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+  border-color: #2dd4bf;
+}
+
+/* Preserve crisp dark text inside the light bg-teal-50 AI Health Recommendation container */
+.elder-detail-drawer .ai-health-recommendation {
+  background-color: #f0fdfa !important;
+  border-color: #5eead4 !important;
+  color: #0f172a !important;
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  header,
+  footer,
+  .print-hidden {
+    display: none !important;
+  }
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .pdf-report-sheet {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+}
+
+
+
+
+/* WCAG 2.1 AA Focus-Visible Ring */
+:focus-visible {
+  outline: 2px solid #34d399;
+  outline-offset: 2px;
+}
+
+/* Mobile Safe Area Padding */
+.pb-safe {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
